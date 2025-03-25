@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Person Details</h2>
+  
+    <div class="form-container">
+      <input type="text" [(ngModel)]="newPerson.name" placeholder="Name">
+      <input type="email" [(ngModel)]="newPerson.email" placeholder="Email">
+      <input type="text" [(ngModel)]="newPerson.phone" placeholder="Phone">
+      <button mat-raised-button color="primary" (click)="addPerson()">
+        {{ editIndex !== null ? 'Update' : 'Add Person' }}
+      </button>
+    </div>
+  
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let person"> {{ person.name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let person"> {{ person.email }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone </th>
+        <td mat-cell *matCellDef="let person"> {{ person.phone }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let person; let i = index">
+          <button mat-icon-button color="warn" (click)="deletePerson(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" (click)="editPerson(i)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  

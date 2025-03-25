@@ -1,0 +1,42 @@
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  
+    h2 {
+      margin-bottom: 20px;
+    }
+  
+    .form-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+  
+      input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+  
+      th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+  
+      th {
+        background-color: #f4f4f4;
+      }
+    }
+  
+    button {
+      cursor: pointer;
+    }
+  }
+  
